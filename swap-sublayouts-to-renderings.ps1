@@ -46,7 +46,7 @@ foreach ($entry in $data) {
                     $referrer.Editing.BeginEdit()
                     $referrer.Fields["__Renderings"].Value = $updatedRenderings
                     $referrer.Editing.EndEdit()
-                    Write-Host "Updated Renderings field for Referrer: $($referrer.Name)"
+                    Write-Host "Updated Renderings field for Referrer: " $referrer.Id $referrer.Name
                 }
     
                 if ($finalRenderingsField -like "*$($entry.OldId)*") {
@@ -56,7 +56,7 @@ foreach ($entry in $data) {
                     $referrer.Editing.BeginEdit()
                     $referrer.Fields["__Final Renderings"].Value = $updatedFinalRenderings
                     $referrer.Editing.EndEdit()
-                    Write-Host "Updated Final Renderings field for Referrer: $($referrer.Name)"
+                    Write-Host "Updated Final Renderings field for Referrer: " $referrer.Id $referrer.Name
                 }
             } else {
                 Write-Host "Item does not exist or has no versions"
